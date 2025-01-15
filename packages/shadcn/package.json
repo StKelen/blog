@@ -1,0 +1,43 @@
+{
+  "name": "@repo/shadcn",
+  "version": "0.0.0",
+  "type": "module",
+  "private": true,
+  "sideEffects": [
+    "**/*.css"
+  ],
+  "files": [
+    "dist"
+  ],
+  "exports": {
+    "./sidebar": "./src/ui/sidebar.tsx",
+    "./collapsible": "./src/ui/collapsible.tsx",
+    "./components": "./src/components/index.ts",
+    "./styles.css": "./dist/index.css"
+  },
+  "scripts": {
+    "build": "tailwindcss -i ./src/globals.css -o ./dist/index.css",
+    "dev": "tailwindcss -i ./src/globals.css -o ./dist/index.css --watch"
+  },
+  "devDependencies": {
+    "@repo/tailwind": "workspace:*",
+    "@types/node": "^18",
+    "@types/react": "^19",
+    "typescript": "^5"
+  },
+  "peerDependencies": {
+    "tailwindcss": "^3"
+  },
+  "dependencies": {
+    "@radix-ui/react-collapsible": "^1.1.2",
+    "@radix-ui/react-dialog": "^1.1.4",
+    "@radix-ui/react-separator": "^1.1.1",
+    "@radix-ui/react-slot": "^1.1.1",
+    "@radix-ui/react-tooltip": "^1.1.6",
+    "class-variance-authority": "^0.7.1",
+    "clsx": "^2.1.1",
+    "lucide-react": "^0.469.0",
+    "tailwind-merge": "^2.6.0",
+    "tailwindcss-animate": "^1"
+  }
+}

@@ -1,0 +1,37 @@
+{
+  "name": "next-blog",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "dev": "next dev --turbopack",
+    "build": "next build",
+    "start": "next start",
+    "pages:build": "npx @cloudflare/next-on-pages",
+    "preview": "npm run pages:build && wrangler pages dev",
+    "deploy": "npm run pages:build && wrangler pages deploy"
+  },
+  "dependencies": {
+    "@repo/plate-editor": "workspace:*",
+    "@repo/shadcn": "workspace:*",
+    "@repo/tailwind": "workspace:*",
+    "clsx": "^2.1.1",
+    "next": "^15.1",
+    "react": "^19",
+    "react-dom": "^19"
+  },
+  "devDependencies": {
+    "@cloudflare/next-on-pages": "^1",
+    "@cloudflare/workers-types": "^4",
+    "@types/node": "^20",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "autoprefixer": "^10",
+    "postcss": "^8",
+    "sass-embedded": "^1",
+    "typescript": "^5",
+    "wrangler": "^3"
+  },
+  "peerDependencies": {
+    "tailwindcss": "^3.4"
+  }
+}
