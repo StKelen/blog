@@ -41,7 +41,6 @@ export const withPlaceholders = (components: any) =>
     {
       key: ParagraphPlugin.key,
       hideOnBlur: true,
-      placeholder: 'Type a paragraph',
       query: {
         maxLevel: 1,
       },
@@ -49,6 +48,5 @@ export const withPlaceholders = (components: any) =>
     {
       key: HEADING_KEYS.h1,
       hideOnBlur: false,
-      placeholder: 'Untitled',
     },
   ]);

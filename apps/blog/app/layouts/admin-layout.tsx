@@ -1,5 +1,5 @@
-import { type ReactNode } from 'react';
-import Link from 'next/link';
+import { Outlet } from 'react-router';
+import { NavLink } from 'react-router';
 import {
   Sidebar,
   SidebarProvider,
@@ -52,7 +52,7 @@ const menus = [
   },
 ];
 
-export default function AdminLayout({ children }: { children: ReactNode }) {
+export default function AdminLayout() {
   return (
     <SidebarProvider>
       <Sidebar collapsible="icon">
@@ -77,9 +77,9 @@ export default function AdminLayout({ children }: { children: ReactNode }) {
                       {item.children.map((menu) => (
                         <SidebarMenuSubItem key={menu.title}>
                           <SidebarMenuSubButton asChild isActive={true}>
-                            <Link href={menu.url}>
+                            <NavLink to={menu.url}>
                               <span>{menu.title}</span>
-                            </Link>
+                            </NavLink>
                           </SidebarMenuSubButton>
                         </SidebarMenuSubItem>
                       ))}
@@ -91,7 +91,9 @@ export default function AdminLayout({ children }: { children: ReactNode }) {
           </SidebarMenu>
         </SidebarContent>
       </Sidebar>
-      <SidebarInset>{children}</SidebarInset>
+      <SidebarInset>
+        <Outlet />
+      </SidebarInset>
     </SidebarProvider>
   );
 }

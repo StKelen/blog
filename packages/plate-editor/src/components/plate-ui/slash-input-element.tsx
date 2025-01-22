@@ -18,7 +18,6 @@ import {
   InlineComboboxContent,
   InlineComboboxEmpty,
   InlineComboboxGroup,
-  InlineComboboxGroupLabel,
   InlineComboboxInput,
   InlineComboboxItem,
 } from './inline-combobox';
@@ -159,20 +158,15 @@ export const SlashInputElement = withRef<typeof PlateElement>(({ className, ...p
     >
       <InlineCombobox element={element} trigger="/">
         <InlineComboboxInput />
-
         <InlineComboboxContent>
           <InlineComboboxEmpty>No results</InlineComboboxEmpty>
-
           {groups.map(({ group, items }) => (
-            <InlineComboboxGroup key={group}>
-              <InlineComboboxGroupLabel>{group}</InlineComboboxGroupLabel>
-
+            <InlineComboboxGroup key={group} heading={group}>
               {items.map(({ focusEditor, icon, keywords, label, value, onSelect }) => (
                 <InlineComboboxItem
                   key={value}
                   value={value}
-                  onClick={() => onSelect(editor, value)}
-                  label={label}
+                  onSelect={() => onSelect(editor, value)}
                   focusEditor={focusEditor}
                   group={group}
                   keywords={keywords}
