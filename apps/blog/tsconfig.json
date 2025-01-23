@@ -1,13 +1,17 @@
 {
   "include": [
-    "**/*",
-    "**/.server/**/*",
-    "**/.client/**/*",
-    ".react-router/types/**/*"
+    ".react-router/types/**/*",
+    "app/**/*",
+    "app/**/.server/**/*",
+    "app/**/.client/**/*",
+    "workers/**/*",
+    "load-context.ts",
+    "worker-configuration.d.ts"
   ],
   "compilerOptions": {
+    "composite": true,
     "lib": ["DOM", "DOM.Iterable", "ES2022"],
-    "types": ["node", "vite/client"],
+    "types": ["node", "vite/client", "@cloudflare/workers-types"],
     "target": "ES2022",
     "module": "ES2022",
     "moduleResolution": "bundler",

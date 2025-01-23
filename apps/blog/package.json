@@ -4,11 +4,16 @@
   "type": "module",
   "scripts": {
     "build": "react-router build",
-    "dev": "react-router dev",
+    "_dev": "react-router dev",
     "start": "react-router-serve ./build/server/index.js",
     "typecheck": "react-router typegen && tsc"
   },
+  "prisma": {
+    "schema": "database/schema.prisma"
+  },
   "dependencies": {
+    "@prisma/adapter-d1": "^6.2.1",
+    "@prisma/client": "^6.2.1",
     "@react-router/node": "^7.1",
     "@react-router/serve": "^7.1",
     "@repo/plate-editor": "workspace:*",
@@ -20,14 +25,17 @@
     "react-router": "^7.1"
   },
   "devDependencies": {
+    "@cloudflare/workers-types": "^4",
     "@react-router/dev": "^7.1",
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",
     "autoprefixer": "^10",
     "postcss": "^8",
+    "prisma": "^6.2.1",
     "vite": "^5.4",
-    "vite-tsconfig-paths": "^5.1"
+    "vite-tsconfig-paths": "^5.1",
+    "wrangler": "^3"
   },
   "peerDependencies": {
     "tailwindcss": "^3.4",

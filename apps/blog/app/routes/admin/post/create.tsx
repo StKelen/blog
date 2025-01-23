@@ -1,6 +1,10 @@
 import { type ChangeEventHandler, useState } from 'react';
 import CustomEditor from '@repo/plate-editor';
-import { Card } from '@repo/shadcn/card';
+import { Route } from './+types/create';
+
+export async function loader({ context }: Route.LoaderArgs) {
+  
+}
 
 export default function AdminCreatePostPage() {
   const [title, setTitle] = useState('');
