@@ -19,6 +19,8 @@
     "@cloudflare/workers-types": "^4",
     "@hono/vite-build": "^1.2.0",
     "@hono/vite-dev-server": "^0.18.1",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
     "vite": "^5",
     "wrangler": "^3"
   }

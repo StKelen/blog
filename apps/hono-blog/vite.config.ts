@@ -9,12 +9,19 @@ export default defineConfig({
     build(),
     devServer({
       adapter,
-      entry: 'app/index.ts',
+      entry: 'app/index.server.tsx',
     }),
   ],
+  ssr: {
+    target: 'webworker',
+    resolve: {
+      conditions: ['workerd', 'browser'],
+      externalConditions: ['edge', 'workerd', 'worker'],
+    },
+  },
   resolve: {
     alias: {
-      "@": path.resolve(__dirname, "./src"),
+      '@': path.resolve(__dirname, './src'),
     },
   },
 });

@@ -126,6 +126,12 @@ importers:
       '@hono/vite-dev-server':
         specifier: ^0.18.1
         version: 0.18.1(hono@4.6.17)(miniflare@3.20241230.2)(wrangler@3.104.0(@cloudflare/workers-types@4.20250121.0))
+      '@types/react':
+        specifier: ^19
+        version: 19.0.7
+      '@types/react-dom':
+        specifier: ^19
+        version: 19.0.3(@types/react@19.0.7)
       vite:
         specifier: ^5
         version: 5.4.14(@types/node@20.17.14)(sass-embedded@1.83.4)
