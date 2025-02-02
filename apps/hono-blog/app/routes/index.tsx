@@ -20,7 +20,6 @@ const routes: RouteObject[] = [
         loader: () => JSON.stringify({ test: 'text' }),
         Component: () => {
           const data = useLoaderData();
-          console.log(11945, data);
           return <div>{data}</div>;
         },
       },

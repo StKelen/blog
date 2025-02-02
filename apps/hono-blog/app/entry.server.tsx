@@ -1,19 +1,14 @@
-import { Hono } from 'hono';
+import { type Context } from 'hono';
 import React, { StrictMode } from 'react';
-import { renderToReadableStream } from 'react-dom/server';
+import { renderToReadableStream, renderToString } from 'react-dom/server';
 import { StaticRouterProvider, createStaticHandler, createStaticRouter } from 'react-router';
 
-import api from './api';
 import routes from './routes';
 import { createFetchRequest } from './routes/request';
 
-const app = new Hono();
-
-app.route('/api', api);
-
 const { query, dataRoutes } = createStaticHandler(routes);
 
-app.get('/*', async (c) => {
+export default async function render(c: Context) {
   let fetchRequest = await createFetchRequest(c);
   let context = await query(fetchRequest);
   if (context instanceof Response) {
@@ -21,14 +16,9 @@ app.get('/*', async (c) => {
   }
   let router = createStaticRouter(dataRoutes, context);
 
-  return c.html(
-    // @ts-ignore
-    renderToReadableStream(
-      <StrictMode>
-        <StaticRouterProvider router={router} context={context} nonce="the-nonce" />
-      </StrictMode>,
-    ),
+  return renderToString(
+    <StrictMode>
+      <StaticRouterProvider router={router} context={context} nonce="the-nonce" />
+    </StrictMode>,
   );
-});
-
-export default app;
+}

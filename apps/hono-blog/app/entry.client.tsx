@@ -22,7 +22,7 @@ async function hydrate() {
   let router = createBrowserRouter(routes);
 
   ReactDOM.hydrateRoot(
-    document.getElementById('app')!,
+    document.getElementById('root')!,
     <React.StrictMode>
       <RouterProvider router={router} />
     </React.StrictMode>,
