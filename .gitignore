@@ -2,19 +2,6 @@
 node_modules
 /.pnp
 .pnp.*
-.yarn/*
-!.yarn/patches
-!.yarn/plugins
-!.yarn/releases
-!.yarn/versions
-
-# testing
-/coverage
-
-# next.js
-.next
-.turbo
-/out/
 
 # Output
 dist
@@ -38,12 +25,7 @@ yarn-error.log*
 .env.*
 !.env.example
 !.env.test
-
-# vercel
-.vercel
-
-#react-router
-.react-router
+.drizzle.env
 
 # typescript
 *.tsbuildinfo
@@ -51,5 +33,4 @@ next-env.d.ts
 
 # Cloudflare
 .wrangler
-.drizzle.env
-.dev.vars
+
