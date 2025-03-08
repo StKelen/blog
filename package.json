@@ -1,6 +1,5 @@
 {
-  "name": "hone-blog",
-  "private": true,
+  "name": "blog",
   "type": "module",
   "scripts": {
     "dev": "vite",
